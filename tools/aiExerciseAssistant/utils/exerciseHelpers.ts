@@ -1,20 +1,20 @@
 import { Exercise, Workout, FunxtionExercise, FunxtionWorkout } from '../types/exercise.types'
 
-// Transform Funxtion API exercise to our Exercise type
+
 export function transformFunxtionExercise(funxtionExercise: FunxtionExercise): Exercise {
   return {
     id: funxtionExercise.id.toString(),
     name: funxtionExercise.name,
     description: funxtionExercise.description,
     instructions: funxtionExercise.instructions.split('\n').filter(step => step.trim()),
-    category: 'Strength', // Default category
+    category: 'Strength', 
     muscleGroups: funxtionExercise.muscle_groups,
     equipment: funxtionExercise.equipment,
     difficulty: mapDifficultyLevel(funxtionExercise.difficulty_level),
     imageUrl: funxtionExercise.image_url,
     videoUrl: funxtionExercise.video_url,
-    repetitions: 12, // Default
-    sets: 3, // Default
+    repetitions: 12, 
+    sets: 3, 
     calories: estimateCalories(funxtionExercise.difficulty_level, 3)
   }
 }

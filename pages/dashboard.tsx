@@ -93,31 +93,6 @@ export default function Dashboard() {
               </div>
             </div>
 
-            {/* Tools */}
-            {/* <div className="wellness-card p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-semibold text-foreground">Tools</h2>
-                <Link href="/tools" className="text-primary text-sm">All tools</Link>
-              </div>
-              <div className="grid grid-cols-2 gap-3">
-                <Link href="/tools" className="p-3 rounded-lg border text-center hover:bg-muted">
-                  <LayoutGrid className="w-5 h-5 mx-auto mb-1" />
-                  <div className="text-sm">AI Tools</div>
-                </Link>
-                <Link href="/meals" className="p-3 rounded-lg border text-center hover:bg-muted">
-                  <CalendarIcon className="w-5 h-5 mx-auto mb-1" />
-                  <div className="text-sm">Meal Planner</div>
-                </Link>
-                <Link href="/tools" className="p-3 rounded-lg border text-center hover:bg-muted">
-                  <Wrench className="w-5 h-5 mx-auto mb-1" />
-                  <div className="text-sm">Workout Assistant</div>
-                </Link>
-                <Link href="/tools" className="p-3 rounded-lg border text-center hover:bg-muted">
-                  <Wrench className="w-5 h-5 mx-auto mb-1" />
-                  <div className="text-sm">Skin & Hair</div>
-                </Link>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

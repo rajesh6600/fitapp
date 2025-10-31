@@ -182,7 +182,7 @@ function parseAIWorkoutResponse(response: string, preferences: WorkoutPreference
     }
   }
   
-  // If parsing failed, use fallback
+  // If parsing failed, use fallback workout
   if (exercises.length === 0) {
     return generateFallbackWorkout(preferences)
   }

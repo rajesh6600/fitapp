@@ -191,8 +191,8 @@ export default function TodoPage() {
                         <div className="font-medium text-foreground">{t.title}</div>
                         {t.notes && <div className="text-sm text-muted-foreground">{t.notes}</div>}
                         <div className="flex items-center gap-3 text-xs text-muted-foreground mt-1">
-                          {t.dueAt && (
-                            <span className="inline-flex items-center gap-1"><CalendarIcon className="w-3 h-3" /> {new Date(t.dueAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                          {(t.timeOfDay || t.dueAt) && (
+                            <span className="inline-flex items-center gap-1"><CalendarIcon className="w-3 h-3" /> {t.timeOfDay || new Date(t.dueAt as string).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                           )}
                           {t.tags?.length > 0 && (
                             <span className="inline-flex items-center gap-1"><Tag className="w-3 h-3" /> {t.tags.join(', ')}</span>
@@ -247,8 +247,8 @@ export default function TodoPage() {
                         <div className="font-medium text-foreground">{t.title}</div>
                         {t.notes && <div className="text-sm text-muted-foreground">{t.notes}</div>}
                         <div className="flex items-center gap-3 text-xs text-muted-foreground mt-1">
-                          {t.dueAt && (
-                            <span className="inline-flex items-center gap-1"><CalendarIcon className="w-3 h-3" /> {new Date(t.dueAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                          {(t.timeOfDay || t.dueAt) && (
+                            <span className="inline-flex items-center gap-1"><CalendarIcon className="w-3 h-3" /> {t.timeOfDay || new Date(t.dueAt as string).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                           )}
                           {t.tags?.length > 0 && (
                             <span className="inline-flex items-center gap-1"><Tag className="w-3 h-3" /> {t.tags.join(', ')}</span>
@@ -300,8 +300,8 @@ export default function TodoPage() {
                         <div className="font-medium line-through">{t.title}</div>
                         {t.notes && <div className="text-sm text-muted-foreground line-through">{t.notes}</div>}
                         <div className="flex items-center gap-3 text-xs text-muted-foreground mt-1">
-                          {t.dueAt && (
-                            <span className="inline-flex items-center gap-1"><CalendarIcon className="w-3 h-3" /> {new Date(t.dueAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
+                          {(t.timeOfDay || t.dueAt) && (
+                            <span className="inline-flex items-center gap-1"><CalendarIcon className="w-3 h-3" /> {t.timeOfDay || new Date(t.dueAt as string).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span>
                           )}
                           {t.tags?.length > 0 && (
                             <span className="inline-flex items-center gap-1"><Tag className="w-3 h-3" /> {t.tags.join(', ')}</span>

@@ -1,4 +1,4 @@
-# FitApp – Setup and Deploy (Short Guide)
+# Fitai – Setup and Deploy (Short Guide)
 
 All-in-one Next.js app with meal planning (Edamam + CAREAI), AI workouts (CAREAI), To‑Do list, and AI music (Sonauto).
 
@@ -16,7 +16,7 @@ npm install
 - Copy and fill only what you need. Safe defaults use fallbacks/mocks.
 ```
 # Database
-DATABASE_URL="postgresql://USER:PASS@HOST:5432/fitapp?schema=public"
+DATABASE_URL="postgresql://USER:PASS@HOST:5432/Fitai?schema=public"
 
 # NextAuth
 NEXTAUTH_URL="http://localhost:3000"

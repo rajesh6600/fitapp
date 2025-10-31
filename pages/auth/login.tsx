@@ -198,42 +198,6 @@ export default function Login() {
       </>
     )}
   </button>
-
-  <button
-    onClick={() => handleSocialSignIn('facebook')}
-    type="button"
-    className="wellness-button w-full flex items-center justify-center gap-2 bg-black border text-white hover:bg-[#404c5b]"
-  >
-    {socialLoading === 'facebook' ? (
-      <>
-        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-        Loading...
-      </>
-    ) : (
-      <>
-        <FaFacebook className="h-8 w-5" />
-        Continue with Facebook
-      </>
-    )}
-  </button>
-
-  <button
-    onClick={() => handleSocialSignIn('twitter')}
-    type="button"
-    className="wellness-button w-full flex items-center justify-center gap-2 bg-black border text-white hover:bg-gray-600"
-  >
-    {socialLoading === 'twitter' ? (
-      <>
-        <Loader2 className="w-4 h-4 mr-2 animate-spin" />
-        Loading...
-      </>
-    ) : (
-      <>
-        <FaTwitter className="h-8 w-5" />
-        Continue with Twitter (X)
-      </>
-    )}
-  </button>
 </div>
 
 

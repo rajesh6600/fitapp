@@ -16,7 +16,6 @@ import MealPlanner from '@/components/MealPlanner'
 import SkinHairChatbot from '@/components/SkinHairChatbot'
 import ExerciseAssistant from '@/tools/aiExerciseAssistant/components/ExerciseAssistant'
 import { cn } from '@/lib/utils'
-import Meals from './meals'
 import { MusicGenerator } from '../components/tools/MusicGenerator';
 
 export default function Tools() {

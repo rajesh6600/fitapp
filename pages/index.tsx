@@ -2,7 +2,14 @@ import { useSession } from 'next-auth/react'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
 import Link from 'next/link'
-import { Target, TrendingUp, Package, Sparkles, Heart } from 'lucide-react'
+import { 
+  Dumbbell,
+  Sparkles,
+  ChefHat,
+  MessageCircle,
+  Activity,
+  Music,Heart
+} from 'lucide-react'
 
 export default function Home() {
   const { data: session, status } = useSession()
@@ -41,7 +48,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-primary">WellnessTracker ✨</span>
+              <span className="text-2xl font-bold text-primary">Fitai ✨</span>
             </div>
 
             <div className="flex items-center space-x-4">
@@ -106,17 +113,38 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
             {[
               {
-                icon: Package,
+                icon: ChefHat,
                 title: 'Personalized Meals',
                 description: 'Get AI-powered meal suggestions tailored to your specific wellness goals and dietary needs.',
                 color: 'text-blue-600 dark:text-blue-400',
                 path: '/meals',
               },
               {
-                icon: TrendingUp,
+                icon: Dumbbell,
+                title: 'AI Exercise Assistant',
+                description: 'Get personalized workout suggestions tailored to your specific wellness goals and dietary needs.',
+                color: 'text-orange-600 dark:text-orange-400',
+                path: '/exercise-assistant',
+              },
+              {
+                icon: MessageCircle,
+                title: 'Skin & Hair Care',
+                description: 'Get personalized skincare and hair care recommendations tailored to your specific wellness goals and dietary needs.',
+                color: 'text-pink-600 dark:text-pink-400',
+                path: '/skin-hair-care',
+              },
+              {
+                icon: Music,
+                title: 'AI Music Generator',
+                description: 'Create custom music tracks with AI',
+                color: 'text-purple-600 dark:text-purple-400',
+                path: '/music-generator',
+              },
+              {
+                icon: Activity,
                 title: 'To‑Do',
                 description: 'Plan your week with a simple, powerful to‑do list for workouts and tasks.',
                 color: 'text-purple-600 dark:text-purple-400',
@@ -174,9 +202,9 @@ export default function Home() {
       <footer className="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <span className="text-2xl font-bold text-primary mb-4 block">WellnessTracker ✨</span>
+            <span className="text-2xl font-bold text-primary mb-4 block">Fitai ✨</span>
             <p className="text-muted-foreground">
-              © 2025 WellnessTracker. Start your health journey.
+              © 2025 Fitai. Start your health journey.
             </p>
           </div>
         </div>
