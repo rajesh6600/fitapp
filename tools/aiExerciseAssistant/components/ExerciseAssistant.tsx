@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
 import { useQuery, useMutation } from '@tanstack/react-query'
 import { 
-  ChefHat, 
+  Dumbbell, 
   Clock, 
   Zap, 
   Target,
   Play,
-  Users,
   Calendar,
   Loader2,
   ChevronRight,
-  ExternalLink,
-  Star,
   Activity,
   Bookmark,
   Plus,
-  User
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
@@ -688,9 +684,9 @@ export default function ExerciseAssistant() {
                       ) : (
                         <div className="w-full max-w-xs h-64 bg-muted rounded-lg flex items-center justify-center">
                           <div className="text-center text-muted-foreground">
-                            <Activity className="w-12 h-12 mx-auto mb-2" />
+                            <Dumbbell className="w-12 h-12 mx-auto mb-2" />
                             <p className="text-sm">Exercise demonstration</p>
-                            <p className="text-xs">loading...</p>
+                            <p className="text-xs">will be added soon</p>
                           </div>
                         </div>
                       )}
