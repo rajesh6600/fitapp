@@ -24,7 +24,7 @@ export default function Dashboard() {
     queryKey: ['todos','dashboard'],
     queryFn: async () => {
       const res = await axios.get('/api/todo?completed=false')
-      return res.data.todos as Array<{ id:string; title:string; notes?:string; dueAt?:string;  }>
+      return res.data.todos as Array<{ id:string; title:string; notes?:string | null; dueAt?:string | null; timeOfDay?: string | null }>
     },
     enabled: !!session,
   })
@@ -79,7 +79,7 @@ export default function Dashboard() {
                         <div>
                           <div className="font-medium text-foreground">{t.title}</div>
                           <div className="text-xs text-muted-foreground">
-                            {t.dueAt ? new Date(t.dueAt).toLocaleString() : 'No time set'} •
+                            {t.timeOfDay || (t.dueAt ? new Date(t.dueAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : 'No time set')} •
                           </div>
                         </div>
                       </div>
