@@ -70,16 +70,20 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const isTemplate = parsed.data.recurrence === 'DAILY' || req.body.isTemplate === true
         let todo
         if (isTemplate) {
-          // Expect time in parsed.data.dueDate or separate time; use dueDate's time
-          const base = parsed.data.dueDate ? new Date(parsed.data.dueDate) : new Date()
-          const hh = String(base.getHours()).padStart(2, '0')
-          const mm = String(base.getMinutes()).padStart(2, '0')
+          // For daily templates, honor provided timeOfDay; fallback to dueDate time or current time
+          let timeStr = parsed.data.timeOfDay
+          if (!timeStr) {
+            const base = parsed.data.dueDate ? new Date(parsed.data.dueDate) : new Date()
+            const hh = String(base.getHours()).padStart(2, '0')
+            const mm = String(base.getMinutes()).padStart(2, '0')
+            timeStr = `${hh}:${mm}`
+          }
           todo = await prisma.todo.create({
             data: {
               userId,
               title: parsed.data.title,
               notes: parsed.data.notes,
-              timeOfDay: `${hh}:${mm}`,
+              timeOfDay: timeStr,
               recurrence: 'DAILY',
               isTemplate: true,
               tags: parsed.data.tags || [],
